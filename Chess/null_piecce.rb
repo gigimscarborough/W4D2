@@ -1,5 +1,4 @@
 class NullPiece < Piece
 
 
-
 end
