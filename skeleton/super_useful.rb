@@ -31,7 +31,7 @@ class BestFriend
   end
 
   def talk_about_friendship
-    puts "Wowza, we've been friends for #{@yrs_known}. Let's be friends for another #{1000 * @yrs_known}.iguessurcute"
+    puts "Wowza, we've been friends for #{@yrs_known}. Let's be friends for another #{1000 * @yrs_known}."
   end
 
   def do_friendstuff
