@@ -24,7 +24,7 @@ end
 
 # PHASE 4
 class BestFriend
-  def initialize(name, yrs_known, fav_pastime, coolcool)
+  def initialize(name, yrs_known, fav_pastime)
     @name = name
     @yrs_known = yrs_known
     @fav_pastime = fav_pastime
