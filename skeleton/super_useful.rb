@@ -1,16 +1,22 @@
 # PHASE 2
 def convert_to_int(str)
-  Integer(str)
+  begin 
+     Integer(str)
+
+  rescue ArgumentError
+    nil
+  end
 end
+ 
 
 # PHASE 3
 FRUITS = ["apple", "banana", "orange"]
-
+class NotFruitError < StandardError; end
 def reaction(maybe_fruit)
   if FRUITS.include? maybe_fruit
     puts "OMG, thanks so much for the #{maybe_fruit}!"
   else 
-    raise StandardError 
+    raise NotFruitError.new #if !FRUITS.include?(maybe_fruit)
   end 
 end
 
@@ -18,8 +24,14 @@ def feed_me_a_fruit
   puts "Hello, I am a friendly monster. :)"
 
   puts "Feed me a fruit! (Enter the name of a fruit:)"
-  maybe_fruit = gets.chomp
-  reaction(maybe_fruit) 
+  begin 
+    maybe_fruit = gets.chomp
+    reaction(maybe_fruit) 
+  rescue NotFruitError
+    puts "not a fruit, give me coffee"
+    # input = gets.chomp
+  #  retry #if  input == "coffee"
+  end
 end  
 
 # PHASE 4
@@ -43,4 +55,6 @@ class BestFriend
   end
 end
 
+
+p reaction("tofu")
 
