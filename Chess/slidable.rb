@@ -15,9 +15,17 @@ module Slidable
     end 
 
     def moves
+        all_moves = []
+        move_dirs.each do |moves_dir|    
+            all_moves += self.grow_unblocked_moves_in_dir(moves_dir[0], moves_dir[1])
+        end
+
+
     end 
 
     def move_dirs()
+
+        raise NotImplementedError
     end 
 
     def grow_unblocked_moves_in_dir(dx, dy)
@@ -31,7 +39,7 @@ module Slidable
             c_row = possible_moves_in_dir.last[0]
             c_col = possible_moves_in_dir.last[1]
         end 
-        
+        possible_moves_in_dir
     end 
     
 end
