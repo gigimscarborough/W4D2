@@ -47,6 +47,11 @@ class BestFriend
     @name = name
     @yrs_known = yrs_known
     @fav_pastime = fav_pastime
+    if @yrs_known < 5
+      raise ArgumentError.new("we haven't known each other long enough to be bestfriends")
+    elsif @name.empty? || @fav_pastime.empty?
+      raise ArgumentError.new("Name or Favorite Pastime cannot be empty")
+    end 
   end
 
   def talk_about_friendship
@@ -63,5 +68,4 @@ class BestFriend
 end
 
 
-p reaction("tofu")
 

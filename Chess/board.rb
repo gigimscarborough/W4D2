@@ -1,32 +1,45 @@
+require "byebug"
+
 class Board
     def initialize
         @rows = Array.new(8) {Array.new(8, "_")}
+        # @null_piece = NullPiece.new
 
     end
 
     def [](pos)
-        @board[pos[0]][pos[1]]
+        row, col = pos
+        @rows[row][col]
     end
 
     def []=(pos, val)
-        @board[pos[0]][pos[1]] = val
+        # debugger
+       row, col = pos
+    #    debugger
+       @rows[row][col] = val
     end
 
     def move_piece(start_pos,end_pos)
-        # if @board[start_pos].nil? 
-        #     raise "error"
-        # elsif !@board[end_pos].nil?
-        #     raise "error"
-        # else 
-        # @board[end_pos] = @board[start_pos]
-        # @board[start_pos] = "_"
+        if !valid_pos?(start_pos)
+            raise "error"
+        elsif !valid_pos?(end_pos)
+            raise "error"
+        else 
+        self[end_pos] = self[start_pos]
+        self[start_pos] = "_"
+        end 
 
-        p @board[start_pos] = 2
-        # end 
     end
 
     def valid_pos?(pos)
+        row, col = pos
+        if row < 0 || row > 7 
+            return false
+        elsif col < 0 || col > 7
+            return false
+        end 
 
+        true
     end
 
     def add_piece(piece, pos)
@@ -50,3 +63,6 @@ class Board
     def move_piece!(color, start_pos, end_pos)
     end
 end
+
+# chess = Board.new
+# chess[20] = 1
