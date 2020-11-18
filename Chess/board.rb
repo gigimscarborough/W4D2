@@ -1,4 +1,5 @@
 class Board
+    attr_accessor
     def initialize
         @board = Array.new(8) {Array.new(8, "_")}
     end
@@ -20,7 +21,7 @@ class Board
         # @board[end_pos] = @board[start_pos]
         # @board[start_pos] = "_"
 
-        p @board[start_pos]
+        p @board[start_pos] = 2
         # end 
     end
 
