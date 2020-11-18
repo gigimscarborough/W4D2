@@ -1,7 +1,7 @@
 class Board
-    attr_accessor
     def initialize
-        @board = Array.new(8) {Array.new(8, "_")}
+        @rows = Array.new(8) {Array.new(8, "_")}
+
     end
 
     def [](pos)

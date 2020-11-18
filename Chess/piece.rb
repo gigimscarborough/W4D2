@@ -1,4 +1,6 @@
 class Piece
+    attr_reader :board, :color
+    attr_accessor :pos 
 
     def initialize(color, board, pos)
         @color = color # 
@@ -10,14 +12,17 @@ class Piece
     end
 
     def empty?
-    end 
+        
+    end
 
     def valid_moves
-    end 
+    end
 
     def pos=(val)
-    end 
+    end
 
-    def 
+    def move_into_check?(end_pos)
+    end
+
 
 end

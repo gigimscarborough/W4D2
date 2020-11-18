@@ -6,6 +6,7 @@ def convert_to_int(str)
     nil
   end 
 end
+ 
 
 # PHASE 3
 class NotFruitError < StandardError; end 
@@ -61,4 +62,6 @@ class BestFriend
   end
 end
 
+
+p reaction("tofu")
 
