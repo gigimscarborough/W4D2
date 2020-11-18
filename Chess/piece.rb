@@ -3,7 +3,7 @@ class Piece
     attr_accessor :pos 
 
     def initialize(color, board, pos)
-        @color = color
+        @color = color # 
         @board = board
         @pos = pos
     end
@@ -12,6 +12,7 @@ class Piece
     end
 
     def empty?
+        
     end
 
     def valid_moves
@@ -23,6 +24,5 @@ class Piece
     def move_into_check?(end_pos)
     end
 
-    
 
 end
