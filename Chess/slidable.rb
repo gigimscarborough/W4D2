@@ -32,7 +32,7 @@ module Slidable
        
         c_row, c_col = self.pos
         possible_moves_in_dir = [[c_row,c_col]]
-        until !board.valid_moves?
+        until !board.valid_pos?([c_row,c_col])
             c_row += dx
             c_col += dy
             possible_moves_in_dir << [c_row, c_col]
@@ -43,3 +43,4 @@ module Slidable
     end 
     
 end
+
